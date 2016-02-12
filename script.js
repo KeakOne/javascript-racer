@@ -1,6 +1,6 @@
 
 // var trackLength = document.getElementById("chooseTrackLength").value; 
-var trackLength = 10;
+var trackLength = 13;
 var strip1 = document.querySelector("#player1_strip");
 var strip2 = document.querySelector("#player2_strip");
 var p1score = 0;
