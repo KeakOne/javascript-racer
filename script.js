@@ -17,17 +17,24 @@ document.addEventListener("keyup", keyPressed, false);
 //keypressed needs to check which playerstrip/player to start "movement" on
 
 	function keyPressed(e) {
-		if (e.keyCode === 81 && p1score > trackLength) {
+		if (e.keyCode === 81) {
+			if (p1score < trackLength) {
 			moveCar(1);
-			p1score++;
-		} else {
-			alert("p1 winzzz");
-		} if (e.keyCode === 80 && p2score > trackLength) {
-			moveCar(2);
-			p2score++;
-		} else {
-			alert("p2 winzzz");
+			p1score ++;
+			}
+			else if (p1score == trackLength) {
+				alert("p1 winzzz");
+			};
 		} 
+		else if (e.keyCode === 80) {
+			if (p2score < trackLength) {
+			moveCar(2);
+			p2score ++;
+			} 
+			else if (p2score == trackLength) {
+				alert("p2 winzzz");
+			};
+		};
 	};
 
 //moveCar needs to find which player strip to initiate movement
@@ -36,6 +43,9 @@ document.addEventListener("keyup", keyPressed, false);
 		var movingCar = document.querySelector("#player"+ playerNumber +"_strip .active");
 		movingCar.classList.remove("active");
 		movingCar = movingCar.nextElementSibling;
+		if (movingCar == null) {
+			alert( "Woohoo! Player"+playerNumber+" wins!");
+		};
 		movingCar.classList.add("active");
 
 		// movingCar.nextElementSibling = movingCar.classList.add('.active');
