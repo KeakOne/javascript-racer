@@ -10,39 +10,43 @@
 
 	<header>
 		<h1>Racer Game 9000</h1>
-		<input type="button" onclick="startGame()" value="New Game">
-		<input type="number" name="trackLength">
+		<strong>Controls / Q=Player1 P=Player2</strong>
+		<div id="gameButtons">
+			<input type="number" id="chooseTrackLength"/>
+		</div>
+
 	</header>
 
+	<div id="backgroundContainer">
+		<table class="racer_table">
 
-	<table class="racer_table">
+		  <tr id="player1_strip">
+		  	<td class="active"></td>
+		    <td></td>
+		    <td></td>
+		    <td></td>
+		    <td></td>
+		    <td></td>
+		    <td></td>
+		    <td></td>
+		    <td></td>
+		    <td></td>
+		  </tr>
 
-	  <tr id="player1_strip">
-	  	<td class="active"></td>
-	    <td></td>
-	    <td></td>
-	    <td></td>
-	    <td></td>
-	    <td></td>
-	    <td></td>
-	    <td></td>
-	    <td></td>
-	    <td></td>
-	  </tr>
-
-	  <tr id="player2_strip">
-	  	<td class="active"></td>
-	    <td></td>
-	    <td></td>
-	    <td></td>
-	    <td></td>
-	    <td></td>
-	    <td></td>
-	    <td></td>
-	    <td></td>
-	    <td></td>
-	  </tr>
-	</table>
+		  <tr id="player2_strip">
+		  	<td class="active"></td>
+		    <td></td>
+		    <td></td>
+		    <td></td>
+		    <td></td>
+		    <td></td>
+		    <td></td>
+		    <td></td>
+		    <td></td>
+		    <td></td>
+		  </tr>
+		</table>
+	</div>
 
 </body>
 	<script src="script.js"></script>
