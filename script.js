@@ -38,18 +38,23 @@ document.addEventListener("keyup", keyPressed, false);
 	var moveCar = function (playerNumber) {
 		console.log("#player"+ playerNumber +"_strip .active")
 		var movingCar = document.querySelector("#player"+ playerNumber +"_strip .active");
+		var obstacle = document.querySelector(".obstacle");
 		movingCar.classList.remove("active");
 		movingCar = movingCar.nextElementSibling;
 		if (movingCar == null) {
 			alert( "Woohoo! Player"+playerNumber+" wins!");
 			location.reload()
+		} else {
 		};
 		movingCar.classList.add("active");
 		};
 
 	
-//appending & taking away the active class, giving the illusion of movement??//
-
+//create an obstacle to jump over
+//a td element has the class of obstacle, if any car touches it the game is over for that player
+//if the moving car.nextelementsibling is the class of obstacle, you must press spacebar
+//if you dont press spacebar and movingcar gets to the class of obstacle you lose
+//if movingcar.nextelement sibling is .obstacle and you press q/p, you lose, spacebar must be pressed to pass
 
 
 
