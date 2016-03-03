@@ -32,21 +32,14 @@ document.addEventListener("keyup", keyPressed, false);
 				alert("p2 winzzz");
 			};
 		}
-		else (e.keyCode === 65); {
+		else if (e.keyCode === 65) {
 			jumpCar(1);
-			if (e.keyCode == 76); {
-				jumpCar(2);
-			};
-		};
+		}
+		else if (e.keyCode === 76) {
+			jumpCar(2);
+		}
 	};
 
-
-		// if else (e.keyCode === 65) {
-		// 		jumpCar(1);
-		// 	if (e.keyCode === 76) {
-		// 		jumpCar(2);
-		// 	}
-		// }
 
 //moveCar needs to find which player strip to initiate movement
 	var moveCar = function (playerNumber) {
@@ -67,11 +60,6 @@ document.addEventListener("keyup", keyPressed, false);
 		};
 
 	
-//a td element has the class of obstacle, if any car touches it the game is over for that player
-//if the moving car.nextelementsibling is the class of obstacle, you must press spacebar
-//if you dont press spacebar and movingcar gets to the class of obstacle you lose
-//if movingcar.nextelement sibling is .obstacle and you press q/p, you lose, spacebar must be pressed to pass
-
 
 //game ends when hitObstacle runs
 	var hitObstacle = function (playerNumber) {
@@ -81,10 +69,15 @@ document.addEventListener("keyup", keyPressed, false);
 
 //listening for player to press their jump key.
 // needs to check if next class is obstacle to tell if jump worked
-	document.addEventListener("keyup", jumpCar, false);
-
 	function jumpCar(playerNumber) {
-		console.log(playerNumber);
+		// console.log(playerNumber + "jumped");
+		var movingCar = document.querySelector("#player"+ playerNumber +"_strip .active");
+		movingCar.classList.remove("active");
+		movingCar = movingCar.nextElementSibling;
+		movingCar = movingCar.nextElementSibling;
+		movingCar.classList.add("active");
+		movingCar.previousElementSibling.add("active");
+		// movingCar.classList.remove("active");
 
 	};
 
