@@ -35,3 +35,9 @@ header {
 	background-color: transparent;
 	background-image: url(img/p2.png);
 }
+
+.obstacle {
+	background-color: transparent;
+	background-image: url(img/egg.png);
+
+}
