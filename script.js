@@ -72,14 +72,19 @@ document.addEventListener("keyup", keyPressed, false);
 	function jumpCar(playerNumber) {
 		// console.log(playerNumber + "jumped");
 		var movingCar = document.querySelector("#player"+ playerNumber +"_strip .active");
+		var obstacle = document.querySelector("#player"+ playerNumber +"_strip .obstacle");
+
 		movingCar.classList.remove("active");
 		movingCar = movingCar.nextElementSibling;
+		// if (movingCar == obstacle) {
+		// 	hitObstacle(playerNumber);
+		// }
 		movingCar = movingCar.nextElementSibling;
 		movingCar.classList.add("active");
-		movingCar.previousElementSibling.add("active");
-		// movingCar.classList.remove("active");
-
 	};
+
+//need to create animation for jump
+//not allow user to jump through egg
 
 
 
